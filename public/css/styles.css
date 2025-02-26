@@ -1,179 +1,147 @@
 /* Custom styles */
 body {
-    font-family: Arial, sans-serif;
-    color: #333;
-    /* Default text color */
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
+  font-family: Arial, sans-serif;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Jirachi Cardshop heading styles */
+.jirachi {
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+/* Custom Teal Color for Text */
+.text-teal {
+  color: hsl(227, 97%, 59%) !important;
+}
+
+header {
+  background-color: hsl(0, 0%, 100%);
+  padding: 20px;
+}
+
+/* Navbar Styling */
+.navbar-toggler {
+  border: none;
+  background-color: #ddd;
+}
+
+@media (max-width: 768px) {
+  .navbar-nav {
+      text-align: center;
+      padding-top: 10px;
   }
-  
-  /* Jirachi Cardshop heading styles */
-  .jirachi {
-    font-size: 2.5rem;
-    /* Increase size */
-    text-transform: uppercase;
-    /* Capitalize the letters */
-    font-weight: bold;
-    /* Make text bold */
-  }
-  
-  /* Custom Teal Color for Text */
-  .text-teal {
-    color: hsl(227, 97%, 59%) !important; /* Teal color */
-  }
-  
-  header {
-    background-color: hsl(0, 0%, 100%);
-    padding: 20px;
-    color: white;
-  }
-  
-  header nav ul {
-    list-style: none;
-    display: flex;
-    justify-content: space-around;
-  }
-  
-  header nav ul li {
-    display: inline;
-  }
-  
-  header nav ul li a {
-    color: white;
-    text-decoration: none;
-    padding: 10px;
-  }
-  
-  footer {
-    background-color: #333;
-    color: white;
-    text-align: center;
-    padding: 10px;
-    position: relative; /* Change from fixed to relative */
-    width: 100%;
-    bottom: 0;
-    margin-top: 20px; /* Add spacing above the footer */
-  }
-  
-  /* Banner Section Styles */
-  .banner {
-    margin-top: 20px;
-    /* Space between header and banner */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 10px;
-    /* Space between images */
-    background-color: hsla(181, 100%, 57%, 0.508);
-    /* Light gray background */
-    padding: 50px 0; /* Add padding to make the banner bigger */
-  }
-  
+}
+
+footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 10px;
+  width: 100%;
+  margin-top: 20px;
+}
+
+/* Banner Section Styles */
+.banner {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  background-color: hsla(181, 100%, 57%, 0.508);
+  padding: 50px 0;
+}
+
+.banner-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+}
+
+.banner-image:hover {
+  transform: scale(1.05);
+}
+
+/* Responsive Banner */
+@media (max-width: 768px) {
   .banner-image {
-    max-width: 100%;
-    height: auto;
-    width: 300px;
-    /* Adjust this value for the size of banner images */
-    border-radius: 8px;
-    /* Optional: rounded corners for images */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    /* Optional: shadow effect */
-    transition: transform 0.3s ease-in-out;
-    display: flex;
-    justify-content: space-between;
-    width: 100%; /* Ensure images stretch across the full width */
-  }
-  
-  .banner-image:hover {
-    transform: scale(1.05);
-    /* Slight zoom effect on hover */
-  }
-  
-  @media (max-width: 768px) {
-    .banner-image {
       width: 100%;
-      /* Make images full width on smaller screens */
       margin-bottom: 10px;
-      /* Add space between stacked images */
-    }
   }
-  
-  /* Logos Section Styles */
-  .logos {
-    background-color: #ffffff;
-    /* Light gray background for the logos section */
-    padding: 20px 0;
-    overflow: hidden;
-    /* Hide logos that are outside the visible area */
-  }
-  
+}
+
+/* Logos Section */
+.logos {
+  background-color: #ffffff;
+  padding: 20px 0;
+  overflow: hidden;
+}
+
+.logo-marquee {
+  display: flex;
+  animation: moveLogos 20s linear infinite;
+  white-space: nowrap;
+}
+
+.logo {
+  max-height: 80px;
+  margin-right: 50px;
+}
+
+@keyframes moveLogos {
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
+}
+
+@media (max-width: 768px) {
   .logo-marquee {
-    display: flex;
-    animation: moveLogos 20s linear infinite;
-    /* Keyframe animation */
-    white-space: nowrap;
-    /* Prevent logos from wrapping to the next line */
+      flex-wrap: wrap;
+      justify-content: center;
   }
-  
   .logo {
-    max-height: 80px;
-    /* Adjust size of logos */
-    margin-right: 50px;
-    /* Space between logos */
-  }
-  
-  @keyframes moveLogos {
-    0% {
-      transform: translateX(100%);
-      /* Start from the far right */
-    }
-  
-    100% {
-      transform: translateX(-100%);
-      /* Move to the far left */
-    }
-  }
-  
-  /* Duplicate logos for seamless scrolling */
-  .logos .logo-marquee::after {
-    content: "";
-    display: block;
-    width: 0;
-    height: 0;
-  }
-  
-  @media (max-width: 768px) {
-    .logo {
       max-height: 60px;
-      /* Reduce logo size on smaller screens */
-    }
   }
-  
-  .scrollable-cards {
-    overflow-x: auto;
-    white-space: nowrap;
-    padding: 20px 0;
-    background-color: #f8f9fa;
-  }
-  
-  .card-wrapper {
-    display: flex;
-    gap: 15px;
-  }
-  
+}
+
+/* Scrollable Cards */
+.scrollable-cards {
+  overflow-x: auto;
+  white-space: nowrap;
+  padding: 20px 0;
+  background-color: #f8f9fa;
+}
+
+.card-wrapper {
+  display: flex;
+  gap: 15px;
+}
+
+.card {
+  flex: 0 0 auto;
+  width: 600px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  text-align: center;
+}
+
+.card img {
+  width: 100%;
+  border-radius: 5px;
+}
+
+/* Responsive Cards */
+@media (max-width: 768px) {
   .card {
-    flex: 0 0 auto;
-    width: 600px;
-    background: white;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    padding: 10px;
-    text-align: center;
+      width: 90%;
   }
-  
-  .card img {
-    width: 100%;
-    border-radius: 5px;
-  }
+}
